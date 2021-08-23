@@ -1,0 +1,87 @@
+@use 'mixin';
+
+.header {
+  @include mixin.flex-box(center, flex-end, column, nowrap);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 4em;
+
+  #toggle {
+    cursor: pointer;
+    background: #eee;
+    position: relative;
+    display: block;
+    width: 4em;
+    height: 2em;
+    border-radius: 160px;
+    transition: .5s;
+    box-shadow: inset 0 8px 60px rgba($color: #000000, $alpha: 0.1),
+      inset 0 8px 8px rgba($color: #000000, $alpha: 0.1),
+      inset 0 -4px 4px rgba($color: #000000, $alpha: 0.1);
+
+    .indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2em;
+      height: 2em;
+      background: linear-gradient(to bottom, #444, #222);
+      border-radius: 50%;
+      transform: scale(.9);
+      box-shadow: 0 8px 40px rgba($color: #000000, $alpha: 0.5),
+        inset 0 -1px 4px rgba($color: #fff, $alpha: 0.2),
+        inset 0 1px 4px rgba($color: #fff, $alpha: 0.2);
+      transition: .5s;
+    }
+
+    &.active .indicator {
+      left: 2em;
+      background: linear-gradient(to bottom, #eee, #f9f9f9);
+      box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1),
+        inset 0 4px 4px rgba($color: #fff, $alpha: 0.1),
+        inset 0 -4px 4px rgba($color: #fff, $alpha: 0.1);
+      ;
+    }
+
+    &.active {
+      background: rgb(80, 80, 80);
+      box-shadow: 0 2px 60px rgba($color: #000000, $alpha: 0.1),
+        inset 0 2px 8px rgba($color: #fff, $alpha: 0.1),
+        inset 0 -4px 4px rgba($color: #fff, $alpha: 0.05);
+      ;
+    }
+  }
+
+  .header-heading {
+    @include mixin.flex-box(center, center, column, nowrap);
+    margin-top: 1.5em;
+    position: relative;
+    width: 100%;
+    height: 75%;
+    padding: 0 3.2em;
+    background: linear-gradient(90deg, #0556c9, #07b7b5);
+    border-radius: .5em;
+
+    h3 {
+      font-size: 2.3em;
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ddd;
+    }
+
+    .heading-paragraph {
+      margin-top: 1em;
+
+      p {
+        font-size: 1em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ddd;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,110 @@
+@use 'mixin';
+
+#skills {
+  &.active h3 {
+    color: #282923;
+  }
+}
+
+.skills {
+  @include mixin.flex-box(center, flex-start, column, nowrap);
+  width: 100%;
+  padding-top: 10em;
+  padding-bottom: 10em;
+
+  .skills-option {
+    h3 {
+      text-transform: capitalize;
+      font-size: 2rem;
+      color: #ddd;
+      font-weight: 400;
+    }
+
+    .skills-option-button {
+      @include mixin.flex-box(flex-start, center, row, wrap);
+
+      button {
+        margin: .5em .5em .5em 0;
+        border: none;
+        border-radius: 2em;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #ddd;
+        padding: .3rem 1rem;
+        background-size: 200%;
+        transition: .5s;
+      }
+
+      button:hover {
+        background-position: right;
+      }
+    }
+  }
+
+  .skills-option:nth-child(1) {
+
+    button:nth-child(1) {
+      background-image: linear-gradient(to left, #de1704, #ed5a14, #de1704);
+    }
+
+    button:nth-child(2) {
+      background-image: linear-gradient(to left, #0314c2, #147de6, #0314c2);
+    }
+
+    button:nth-child(3) {
+      background-image: linear-gradient(to left, #a4a615, #c9d01e, #a4a615);
+    }
+
+    button:nth-child(4) {
+      background-image: linear-gradient(to left, #c8093d, #eb325e, #c8093d);
+    }
+
+    button:nth-child(5) {
+      background-image: linear-gradient(to left, #0384a1, #22b7cb, #0384a1);
+    }
+
+    button:nth-child(6) {
+      background-image: linear-gradient(to left, #6410c0, #3d15e8, #6410c0);
+    }
+  }
+
+  .skills-option:nth-child(2) {
+    margin-top: 4em;
+
+    button:nth-child(1) {
+      background-image: linear-gradient(to left, #0314c2, #1b7ee6, #0314c2);
+    }
+
+    button:nth-child(2) {
+      background-image: linear-gradient(to left, #bc3811, #e65a29, #bc3811);
+    }
+
+    button:nth-child(3) {
+      background-image: linear-gradient(to left, #099630, #21cd43, #099630);
+    }
+
+    button:nth-child(4) {
+      background-image: linear-gradient(to left, #614539, #c0801f, #614539);
+    }
+  }
+
+  .skills-option:nth-child(3) {
+    margin-top: 4em;
+
+    button:nth-child(1) {
+      background-image: linear-gradient(to left, #0337a7, #347ee1, #0337a7);
+    }
+
+    button:nth-child(2) {
+      background-image: linear-gradient(to left, #a05d02, #dc8212, #a05d02);
+    }
+
+    button:nth-child(3) {
+      background-image: linear-gradient(to left, #07772d, #34ab4d, #07772d);
+    }
+
+    button:nth-child(4) {
+      background-image: linear-gradient(to left, #fb2c22, #f67b2b, #fb2c22);
+    }
+  }
+}

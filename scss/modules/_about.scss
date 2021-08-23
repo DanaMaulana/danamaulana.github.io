@@ -1,0 +1,49 @@
+@use 'mixin';
+
+#about {
+  &.active p {
+    color: #282923;
+  }
+}
+
+.about {
+  @include mixin.flex-box(space-between, center, row, wrap);
+  position: relative;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  .about-image {
+    @include mixin.two-column();
+
+
+    .about-image-box {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(90deg, #0556c9, #07b7b5);
+      border-radius: 10px;
+
+      p {
+        color: #ddd;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-align: center;
+        line-height: 400px;
+      }
+    }
+  }
+
+  .about-paragraph {
+    @include mixin.two-column();
+
+    p {
+      color: #ddd;
+      font-size: 1.2rem;
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+
+}

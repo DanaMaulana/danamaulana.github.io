@@ -1,0 +1,31 @@
+@mixin flex-box($justify-content:flex-start, $align-items: flex-start, $flex-direction: row, $flex-wrap: nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin input {
+  width: 100%;
+  padding: .6em;
+  color: #333;
+  outline: none;
+  border: 3px solid rgba($color: #1479e7, $alpha: 0.6);
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: 300;
+  resize: none;
+}
+
+@mixin heading {
+  position: relative;
+  color: #5b5b5b;
+  text-transform: capitalize;
+  font-size: 3em;
+}
+
+@mixin two-column {
+  position: relative;
+  width: 48%;
+}

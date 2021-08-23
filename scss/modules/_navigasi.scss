@@ -1,0 +1,63 @@
+@use 'mixin';
+
+.navigasi {
+  @include mixin.flex-box(center, center, row, wrap);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: transparent;
+
+  .navigasi-list {
+    @include mixin.flex-box(center, center, row, wrap);
+    list-style: none;
+
+    li {
+      margin: 3em 0 0;
+
+      a {
+        position: relative;
+        margin: 0 .7em;
+        padding: .3em 1.5em;
+        display: inline-block;
+        font-size: 1.3em;
+        color: #eee;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 40px;
+        background: linear-gradient(to left, #0556c9, #07b7b5, #0556c9);
+        overflow: hidden;
+        background-size: 200%;
+        transition: .5s;
+
+        span {
+          position: absolute;
+          background: #fff;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          border-radius: 50%;
+          animation: ripples 1s linear infinite;
+        }
+
+        @keyframes ripples {
+          0% {
+            width: 0;
+            height: 0;
+            opacity: .5;
+          }
+
+          100% {
+            width: 500px;
+            height: 500px;
+            opacity: 0;
+          }
+        }
+      }
+
+      a:hover {
+        background-position: right;
+      }
+    }
+  }
+}

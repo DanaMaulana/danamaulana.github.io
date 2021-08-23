@@ -1,0 +1,102 @@
+@use 'mixin';
+
+#contact {
+  &.active p {
+    color: #282923;
+  }
+}
+
+.contact {
+  @include mixin.flex-box(center, center, column, nowrap);
+  padding-top: 10em;
+  padding-bottom: 10em;
+
+  .contact-form {
+    @include mixin.flex-box(center, center, column, nowrap);
+    width: 100%;
+
+    .contact-form-box {
+      position: relative;
+      margin-bottom: 1.3em;
+      min-width: 60%;
+
+      input {
+        @include mixin.input();
+        padding: .7em 1.5em;
+        box-shadow: 0 0 20px rgba(20, 121, 231, 1);
+      }
+
+      textarea {
+        @include mixin.input();
+        height: 15em;
+        padding: .7em 1.5em;
+        box-shadow: 0 0 20px rgba(20, 121, 231, 1);
+      }
+    }
+  }
+
+  .contact-social-media {
+    p {
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 400;
+      color: #ddd;
+      text-transform: capitalize;
+    }
+
+    .social-media-img {
+      margin-top: .5em;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+
+      .media-img {
+        @include mixin.flex-box(center, center, row, nowrap);
+        cursor: pointer;
+        position: relative;
+        padding: .6em;
+        margin: .3em;
+        border-radius: 50%;
+
+        &:nth-child(1) {
+          background: #4255fa;
+          transition: .3s;
+
+          &:hover {
+            background: #2d3dcf;
+          }
+        }
+
+        &:nth-child(2) {
+          background: #239ebe;
+          transition: .3s;
+
+          &:hover {
+            background: #197b95;
+          }
+        }
+
+        &:nth-child(3) {
+          background: #db793a;
+          transition: .3s;
+
+          &:hover {
+            background: #be662d;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          display: flex;
+
+          img {
+            max-width: 35px;
+            pointer-events: none;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+}
