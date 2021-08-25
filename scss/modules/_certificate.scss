@@ -6,16 +6,6 @@
   padding-top: 10em;
   padding-bottom: 10em;
 
-  // #sliderRight {
-  //   position: absolute;
-  //   right: 9%;
-  // }
-
-  // #sliderLeft {
-  //   position: absolute;
-  //   left: 9%;
-  // }
-
   .certificate-card {
     @include mixin.flex-box(center, center, row, nowrap);
     width: 100%;
@@ -40,11 +30,6 @@
       min-height: 300px;
       overflow-x: hidden;
 
-      a {
-        display: inline-block;
-        text-decoration: none;
-        margin: 0 2em;
-
         img {
           position: relative;
           width: 370px;
@@ -53,7 +38,6 @@
           border-radius: .5em;
           box-shadow: 0 5px 10px rgba(255, 253, 253, 0.7);
         }
-      }
 
     }
   }
